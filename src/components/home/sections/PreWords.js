@@ -21,7 +21,7 @@ function PreWords() {
                     <p data-aos='fade-up' data-aos-once='true'>I design and develop responsive and optimized websites and apps. I love creating user-friendly web solutions and engaging interactions between people and technology.
                     <br /><br />I'm currently studying front-end development at Medieinstitutet and will be graduating in september 2022. Do you want to know more about my education and previous jobs?</p>
                     <br /> 
-                    <a href='https://www.linkedin.com/in/josefine-l%C3%B6fgren-a63126170/'>
+                    <a target="_blank" href='https://www.linkedin.com/in/josefine-l%C3%B6fgren-a63126170/'>
                       <Button variant='dark' className='fw-bold' data-aos='fade-up' data-aos-once='true'> 
                         Have a look at my LinkedIn
                         <IoIosArrowForward className='btn-icon'/> 

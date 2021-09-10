@@ -43,7 +43,7 @@ function Projects() {
               /> 
             )
           })}
-            <a href='https://github.com/josefinelofgren'>
+            <a target="_blank" href='https://github.com/josefinelofgren'>
               <Button variant='dark' className='fw-bold' data-aos='fade-up' data-aos-once='true'> 
                 Or have a look at my Github 
                 <IoIosArrowForward className='btn-icon'/> 
