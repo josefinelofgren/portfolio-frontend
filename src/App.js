@@ -35,7 +35,7 @@ function App() {
           </Route>
             <Switch>
                 <Route 
-                    exact path='/josefinelofgren.com'>
+                    exact path='/'>
                     <Home />  
                 </Route>
                 <Route 
