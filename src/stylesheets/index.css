@@ -59,6 +59,10 @@ a:hover {
   background-color: rgb(235, 235, 235);
 }
 
+.btn-projects {
+  text-align: left;
+}
+
 a {
   text-decoration: none !important;
   color: rgb(214, 214, 214);
@@ -78,11 +82,18 @@ img {
   position: relative;
   width: 100%;
   height: auto;
+}
+
+figure {
   filter: grayscale(100%);
 }
 
-img:hover {
+figure:hover {
   filter: grayscale(0%);
+}
+
+.img-color {
+  filter: grayscale(0%) !important;
 }
 
 .border-radius {
@@ -104,7 +115,10 @@ img:hover {
   padding: 100px 0;
   margin: 0 auto;
   text-align: center;
+}
 
+.header-content:first-letter {
+  text-transform: capitalize;
 }
 
 .biggertext {
@@ -309,9 +323,14 @@ figure.project-web {
   font-weight: 400;
 }
 
+.project-headtitle a {
+  color: rgb(46, 46, 46) !important;
+}
+
+
+
 .project-title-arrow {
   position: relative;
-  top: 5px;
   font-size: 25px;
 }
 
@@ -351,8 +370,12 @@ figure.project-web {
 }
 
 .contact-mail-adress {
-  padding-bottom: 3px;
-  border-bottom: 1px solid white;
+  padding-bottom: 1px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.863);
+}
+
+.contact-mail-adress:hover {
+  border-color: rgb(155, 182, 172);
 }
 
 
@@ -374,5 +397,20 @@ figure.project-web {
 }
 
 .sm-icon a:hover {
-  color: rgb(155, 182, 172)
+  color: rgb(182, 179, 155);
+}
+
+
+/* project read more */ 
+
+.project-readmore {
+  padding: 40px 0px;
+}
+
+.project-readmore-description {
+  margin-bottom: 30px;
+}
+
+.project-readmore-image {
+  margin-bottom: 50px;
 }

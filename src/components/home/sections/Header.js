@@ -4,14 +4,15 @@ import React from 'react';
 //import components
 import { Container, Row, Col } from 'react-bootstrap';
 
-function Header() {
+function Header({ text, undertext }) {
   return (
     <header className='header'>
         <Container fluid>
             <div className='header-content'>
                 <h1 className='display-2 header-title'>
-                    Hi I'm <span className='color biggertext'>Josefine</span>. <br/> A front-end developer with a passion for UX.
+                    {text}
                 </h1>
+                <p>{undertext}</p>
             </div>
         </Container>
     </header>

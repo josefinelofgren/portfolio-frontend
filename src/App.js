@@ -8,11 +8,14 @@ import {
 import Aos from 'aos';
 
 //import components
-import { Container, Row } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import Navigation from './components/navigation/Navigation';
 import Home from './components/home/Home';
+import Josefine from './components/josefine/Josefine';
+import ProjectReadMore from './components/project/ProjectReadMore';
 
 function App() {
+
 
   useEffect(() => {
     Aos.init({ 
@@ -26,12 +29,22 @@ function App() {
     <div className='App'>
     <Router>
         <Container fluid className='body-container'>
-            <Navigation
-                /> 
+          <Route 
+            path='/:path1?/:path2?'>
+            <Navigation /> 
+          </Route>
             <Switch>
                 <Route 
-                    exact path='/josefinelofgren.com/'>
+                    exact path='/josefinelofgren.com'>
                     <Home />  
+                </Route>
+                <Route 
+                    path='/josefine'>
+                    <Josefine />  
+                </Route>
+                <Route 
+                    path='/project/:projectName'>
+                    <ProjectReadMore />  
                 </Route>
             </Switch>
         </Container>

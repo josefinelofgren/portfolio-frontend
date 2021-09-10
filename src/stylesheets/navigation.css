@@ -10,6 +10,16 @@
   text-transform: uppercase;
 }
 
+.navbar-menu {
+  display: none;
+}
+
+.navbar-menu.show {
+  display: block;
+  position: relative;
+  top: -20px;
+}
+
 
 .nav-menu-wrap {
   position: fixed;

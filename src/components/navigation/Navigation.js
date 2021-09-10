@@ -1,6 +1,7 @@
 // import libaries 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
+import { useParams } from 'react-router-dom';
 
 //import components
 import { Container, Row, Col, Navbar } from 'react-bootstrap';
@@ -45,6 +46,7 @@ function Navigation() {
                             offset={-70}
                             duration={500}
                             to={item.path}
+                            onClick={showSidebar}
                             >
                             {item.title}
                         </Link>

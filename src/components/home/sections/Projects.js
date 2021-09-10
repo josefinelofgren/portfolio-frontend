@@ -1,12 +1,16 @@
 // import libaries 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 //import components
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { IoIosArrowForward } from 'react-icons/io';
-import { ProjectDataLeft, ProjectDataRight } from '../../data/ProjectData';
+import { ProjectData } from '../../data/ProjectData';
+
 
 function Projects() {
+
+
   return (
     <div id='projects' className='projects'>
     <Container fluid>
@@ -15,33 +19,41 @@ function Projects() {
           <Container fluid>
             <h2 className='title about-title' data-aos='fade-up' data-aos-once='true'>Selected projects</h2>
             <p data-aos='fade-up' data-aos-once='true'>I've collected some of my most recents and well executed projects for you to have a closer look at. Hope you find them interesting. </p>
-          {ProjectDataLeft.map((item, index) => {
+          {ProjectData.map((item, index) => {
+            if(item.side === 'left'){
             return (
-              <Project 
-                title={item.title}
-                undertitle={item.undertitle}
-                description={item.description}
-                cName={item.cName}
-                imgSrc={item.imgSrc}
-                device={item.device}
-              /> 
+              <Link className='project-headtitle' to={`project/${item.path}`}>
+                <Project 
+                  title={item.title}
+                  undertitle={item.undertitle}
+                  description={item.description}
+                  cName={item.cName}
+                  imgSrc1={item.imgSrc1}
+                  device1={item.device1}
+                /> 
+              </Link>
             )
+          } else return null; 
           })}
             </Container>
         </Col>
         <Col md='6' className='about-col right'>
         <Container fluid>
-          {ProjectDataRight.map((item, index) => {
+          {ProjectData.map((item, index) => {
+            if(item.side === 'right'){
             return (
-              <Project 
-                title={item.title}
-                undertitle={item.undertitle}
-                description={item.description}
-                cName={item.cName}
-                imgSrc={item.imgSrc}
-                device={item.device}
-              /> 
+              <Link className='project-headtitle' to={`project/${item.path}`}>
+                <Project 
+                  title={item.title}
+                  undertitle={item.undertitle}
+                  description={item.description}
+                  cName={item.cName}
+                  imgSrc1={item.imgSrc1}
+                  device1={item.device1}
+                />
+              </Link> 
             )
+          }
           })}
             <a target="_blank" href='https://github.com/josefinelofgren'>
               <Button variant='dark' className='fw-bold' data-aos='fade-up' data-aos-once='true'> 
@@ -59,7 +71,7 @@ function Projects() {
 
 
 
-function Project({ linkSrc, imgSrc, device, title, undertitle, description, cName}){
+export function Project({ linkSrc, imgSrc1, device1, title, undertitle, description, cName}){
 
   const [hovered, setHovered] = useState(false);
   const toggleHover = () => setHovered(!hovered);
@@ -69,13 +81,13 @@ function Project({ linkSrc, imgSrc, device, title, undertitle, description, cNam
           <div className="project">
               <div className='project-content' data-aos="fade-up" data-aos-once="true" data-aos-offset='300'>
                   <figure 
-                      className={hovered ? `project-${device} work hover` : `project-${device} work`}
+                      className={hovered ? `project-${device1} work hover` : `project-${device1} work`}
                       onMouseEnter={toggleHover} 
                       onMouseLeave={toggleHover}
                       >
-                      {imgSrc}
+                      {imgSrc1}
                   </figure>
-              <div className={`project-info ${device}`}>
+              <div className={`project-info ${device1}`}>
                   <div 
                       className={hovered ? 'project-title-box hover' : 'project-title-box'}
                       onMouseEnter={toggleHover} 
