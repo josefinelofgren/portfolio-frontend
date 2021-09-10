@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+// import libaries 
+import React, { useEffect } from 'react';
+import { 
+  BrowserRouter as Router, 
+  Switch,
+  Route
+ } from 'react-router-dom';
+import Aos from 'aos';
+
+//import components
+import { Container, Row } from 'react-bootstrap';
+import Navigation from './components/navigation/Navigation';
+import Home from './components/home/Home';
 
 function App() {
+
+  useEffect(() => {
+    Aos.init({ 
+      duration: 600,
+      easing: 'ease-out',
+      anchorPlacement: 'top-top'
+    });
+}, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className='App'>
+    <Router>
+        <Container fluid className='body-container'>
+            <Navigation
+                /> 
+            <Switch>
+                <Route 
+                    exact path='/'>
+                    <Home />  
+                </Route>
+            </Switch>
+        </Container>
+     </Router>
+</div>
   );
 }
 

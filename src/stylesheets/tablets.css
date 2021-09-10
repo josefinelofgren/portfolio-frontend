@@ -1,0 +1,22 @@
+@media screen and (max-width: 750px) {
+
+    .nav-menu-wrap.open {
+      width: 400px;
+      height: 400px;
+      -moz-border-bottom-left-radius: 400px;
+      border-bottom-left-radius: 400px;
+      -webkit-animation: anim-jelly 0.8s linear forwards;
+      animation: anim-jelly 0.8s linear forwards;
+    }
+
+    .nav-menu-items {
+      padding-top: 60px;
+    }
+
+  }
+
+  @media screen and (max-width: 1000px) { 
+    .col-md-6 {
+      padding: 0px !important;
+    }
+  }
