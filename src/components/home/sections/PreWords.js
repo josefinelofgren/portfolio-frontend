@@ -11,7 +11,7 @@ function PreWords({showMenuLinks, hideMenuLinks}) {
 
   // button on click 
   const onClick = () => {
-    history.push('/josefine');
+    history.push('/josefinelofgren.com/josefine');
     hideMenuLinks();
   }
 

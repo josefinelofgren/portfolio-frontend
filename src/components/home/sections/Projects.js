@@ -66,7 +66,7 @@ export function Project({textSide, path, devicePercent, linkSrc, imgSrc, title, 
                       <h3 className="project-title">{title}</h3>
                   <h5 className="project-undertitle">{undertitle}</h5>
                   <p className="project-undertitle">{description}</p>
-                  <Link className='project-headtitle' to={`project/${path}`}>
+                  <Link className='project-headtitle' to={`/josefinelofgren.com/project/${path}`}>
                     <Button className={hovered ? 'fw-bold btn-project hover' : 'fw-bold btn-project' } 
                     onMouseEnter={toggleHover} 
                     onMouseLeave={toggleHover}>Read more <IoIosArrowForward className='btn-icon'/></Button>
