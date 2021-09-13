@@ -78,7 +78,7 @@ function Navigation({showMenuLinks, hideMenuLinks, menuLinks, backLink, sidebar,
                 <LinkScroll to='contact'><li className='nav-link'>Contact</li></LinkScroll>
             </ul>
              <ul className={backLink ? 'nav-links show' : 'nav-links'}>
-               <Link onClick={onClickHome} to='/'>
+               <Link onClick={onClickHome} to='#'>
                  <li>Back to homepage</li>
               </Link>
             </ul>
@@ -95,7 +95,7 @@ function Navigation({showMenuLinks, hideMenuLinks, menuLinks, backLink, sidebar,
             <LinkScroll to='contact'><li className='nav-text'>Contact</li></LinkScroll>
         </ul>
         <ul className={backLink ? 'nav-links show sidebar-links' : 'nav-links sidebar-links'}>
-            <Link onClick={onClickHome} to='/'>
+            <Link onClick={onClickHome} to='#'>
                  <li className='nav-text'>Back to homepage</li>
             </Link>
         </ul>
