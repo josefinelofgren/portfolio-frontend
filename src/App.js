@@ -1,5 +1,5 @@
 // import libaries 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { 
   BrowserRouter as Router, 
   Switch,
@@ -16,6 +16,39 @@ import ProjectReadMore from './components/project/ProjectReadMore';
 
 function App() {
 
+  // show or hide sidebar   
+  const [sidebar, setSidebar] = useState(false);
+  const showSidebar = () => {
+      setSidebar(!sidebar);
+  };
+  
+
+  const [menuLinks, setMenuLinks] = useState(true);
+  const [backLink, setBackLink] = useState(false);
+  
+  // hide menu links 
+  const hideMenuLinks = () => {
+    if(window.location.pathname !== '/'){
+        setMenuLinks(false);
+        setBackLink(true);
+    } else {
+        setMenuLinks(true);
+        setBackLink(false);
+    }
+  }
+
+    // show menu links
+    const showMenuLinks = () => {
+      if(window.location.pathname === '/'){
+          setMenuLinks(true);
+          setBackLink(false);
+      } else {
+          setMenuLinks(false);
+          setBackLink(true);
+      }
+  
+    }
+
 
   useEffect(() => {
     Aos.init({ 
@@ -30,21 +63,33 @@ function App() {
     <Router>
         <Container fluid className='body-container'>
           <Route 
-            path='/:path1?/:path2?'>
-            <Navigation /> 
+            path='/josefinelofgren.com/:path1?/:path2?'>
+            <Navigation 
+            showMenuLinks={showMenuLinks}
+            hideMenuLinks={hideMenuLinks}
+            menuLinks={menuLinks}
+            backLink={backLink}
+            showSidebar={showSidebar}
+            setSidebar={setSidebar}
+            sidebar={sidebar}/> 
           </Route>
             <Switch>
                 <Route 
-                    exact path='/'>
-                    <Home />  
+                    exact path='/josefinelofgren.com/'>
+                    <Home 
+                     showMenuLinks={showMenuLinks}
+                     hideMenuLinks={hideMenuLinks}
+                     />  
                 </Route>
                 <Route 
-                    path='/josefine'>
-                    <Josefine />  
+                    path='/josefinelofgren.com/josefine'>
+                    <Josefine 
+                       hideMenuLinks={hideMenuLinks}/>  
                 </Route>
                 <Route 
-                    path='/project/:projectName'>
-                    <ProjectReadMore />  
+                    path='/josefinelofgren.com/project/:projectName'>
+                    <ProjectReadMore 
+                      hideMenuLinks={hideMenuLinks}/>  
                 </Route>
             </Switch>
         </Container>

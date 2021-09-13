@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { IoIosArrowForward } from 'react-icons/io';
 import { ProjectData } from '../../data/ProjectData';
+import { FaPercent } from 'react-icons/fa';
 
 
 function Projects() {
@@ -15,52 +16,25 @@ function Projects() {
     <div id='projects' className='projects'>
     <Container fluid>
       <Row>
-        <Col md='6' className='projects-col left'>
+        <Col md='12' className='projects-col left'>
           <Container fluid>
+            <h5 className='title-number' data-aos='fade-up' data-aos-once='true'>01 / </h5>
             <h2 className='title about-title' data-aos='fade-up' data-aos-once='true'>Selected projects</h2>
-            <p data-aos='fade-up' data-aos-once='true'>I've collected some of my most recents and well executed projects for you to have a closer look at. Hope you find them interesting. </p>
+            <p data-aos='fade-up' data-aos-once='true' className='project-intro-text'>I've collected some of my most recents and well executed projects for you to have a closer look at. Hope you find them interesting. </p>
           {ProjectData.map((item, index) => {
-            if(item.side === 'left'){
             return (
-              <Link className='project-headtitle' to={`project/${item.path}`}>
+
                 <Project 
                   title={item.title}
                   undertitle={item.undertitle}
                   description={item.description}
-                  cName={item.cName}
-                  imgSrc1={item.imgSrc1}
-                  device1={item.device1}
+                  imgSrc={item.imgSrc}
+                  devicePercent={item.devicePercent}
+                  textSide={item.textSide}
+                  path={item.path}
                 /> 
-              </Link>
             )
-          } else return null; 
           })}
-            </Container>
-        </Col>
-        <Col md='6' className='about-col right'>
-        <Container fluid>
-          {ProjectData.map((item, index) => {
-            if(item.side === 'right'){
-            return (
-              <Link className='project-headtitle' to={`project/${item.path}`}>
-                <Project 
-                  title={item.title}
-                  undertitle={item.undertitle}
-                  description={item.description}
-                  cName={item.cName}
-                  imgSrc1={item.imgSrc1}
-                  device1={item.device1}
-                />
-              </Link> 
-            )
-          }
-          })}
-            <a target="_blank" href='https://github.com/josefinelofgren'>
-              <Button variant='dark' className='fw-bold' data-aos='fade-up' data-aos-once='true'> 
-                Or have a look at my Github 
-                <IoIosArrowForward className='btn-icon'/> 
-              </Button>
-            </a>
             </Container>
         </Col>
       </Row>
@@ -71,7 +45,7 @@ function Projects() {
 
 
 
-export function Project({ linkSrc, imgSrc1, device1, title, undertitle, description, cName}){
+export function Project({textSide, path, devicePercent, linkSrc, imgSrc, title, undertitle, description}){
 
   const [hovered, setHovered] = useState(false);
   const toggleHover = () => setHovered(!hovered);
@@ -80,24 +54,23 @@ export function Project({ linkSrc, imgSrc1, device1, title, undertitle, descript
       <a href={linkSrc}>
           <div className="project">
               <div className='project-content' data-aos="fade-up" data-aos-once="true" data-aos-offset='300'>
+                  <div className='project-figure'>
                   <figure 
-                      className={hovered ? `project-${device1} work hover` : `project-${device1} work`}
-                      onMouseEnter={toggleHover} 
-                      onMouseLeave={toggleHover}
+                      className={hovered ? ` work hover` : ` work`}
+                      style={{ left: `${devicePercent}`}}
                       >
-                      {imgSrc1}
+                        <img src={imgSrc} className='project-img' /> 
                   </figure>
-              <div className={`project-info ${device1}`}>
-                  <div 
-                      className={hovered ? 'project-title-box hover' : 'project-title-box'}
-                      onMouseEnter={toggleHover} 
-                      onMouseLeave={toggleHover}
-                      >
-                      <h3 className="project-title">{title} <IoIosArrowForward className="project-title-arrow"/></h3>
                   </div>
-                  <h5 className="project-undertitle">
-                      {undertitle}
-                  </h5>
+              <div className={`project-info ${textSide}`}>
+                      <h3 className="project-title">{title}</h3>
+                  <h5 className="project-undertitle">{undertitle}</h5>
+                  <p className="project-undertitle">{description}</p>
+                  <Link className='project-headtitle' to={`project/${path}`}>
+                    <Button className={hovered ? 'fw-bold btn-project hover' : 'fw-bold btn-project' } 
+                    onMouseEnter={toggleHover} 
+                    onMouseLeave={toggleHover}>Read more <IoIosArrowForward className='btn-icon'/></Button>
+                  </Link>
               </div>
               </div>
           </div>

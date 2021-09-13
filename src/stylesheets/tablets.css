@@ -13,6 +13,27 @@
       padding-top: 60px;
     }
 
+    .container-fluid {
+      padding: 20px;
+    }
+
+    .project {
+      margin: 20px 0px 180px 0px;
+    }
+
+    .container-fluid.intro {
+      padding-bottom: 0;
+    }
+
+    .project-readmore-text {
+      margin-bottom: 20px;
+    }
+    
+    .project-readmore-text.intro {
+      margin-bottom: 0px;
+    }
+    
+
   }
 
   @media screen and (max-width: 1000px) { 
