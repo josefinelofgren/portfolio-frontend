@@ -1,5 +1,5 @@
 // import libaries 
-import React, { useLayoutEffect } from 'react';
+import React, { useLayoutEffect, useEffect } from 'react';
 
 //import components
 import { Container, Row, Col } from 'react-bootstrap';
@@ -14,6 +14,12 @@ function Home({showMenuLinks, hideMenuLinks, setSidebar}) {
   useLayoutEffect(() => {
     window.scrollTo(0, 0)
   });
+
+  useEffect(() => {
+    if(window.location.pathname === '/josefinelofgren.com/'){
+      showMenuLinks();
+    }
+  },[])
 
   return (
     <>
