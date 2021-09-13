@@ -28,7 +28,7 @@ function App() {
   
   // hide menu links 
   const hideMenuLinks = () => {
-    if(window.location.pathname !== '/'){
+    if(window.location.pathname !== '/josefinelofgren.com/'){
         setMenuLinks(false);
         setBackLink(true);
     } else {
@@ -39,7 +39,7 @@ function App() {
 
     // show menu links
     const showMenuLinks = () => {
-      if(window.location.pathname === '/'){
+      if(window.location.pathname === '/josefinelofgren.com/'){
           setMenuLinks(true);
           setBackLink(false);
       } else {
