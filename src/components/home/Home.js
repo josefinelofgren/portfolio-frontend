@@ -25,7 +25,7 @@ function Home({showMenuLinks, hideMenuLinks, setSidebar}) {
     <>
         <Header 
           text={<> <span className='color biggertext'>Hi I'm Josefine</span>. <br/></>}
-          undertext="I'm front-end developer with a passion for UX."/> 
+          undertext="I'm a front-end developer with a passion for UX."/> 
         <PreWords 
         showMenuLinks={showMenuLinks}
         hideMenuLinks={hideMenuLinks}
