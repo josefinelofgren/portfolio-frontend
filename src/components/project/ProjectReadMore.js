@@ -26,7 +26,7 @@ function ProjectReadMore({hideMenuLinks}) {
   }
 
   useEffect(() => {
-    if(window.location.pathname !== '/'){
+    if(window.location.pathname !== '/josefinelofgren.com/'){
       hideMenuLinks();
     }
   },[])

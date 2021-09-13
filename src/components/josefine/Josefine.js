@@ -22,7 +22,7 @@ function Josefine({hideMenuLinks}) {
   }
 
   useEffect(() => {
-    if(window.location.pathname === '/josefine'){
+    if(window.location.pathname === '/josefinelofgren.com/josefine'){
       hideMenuLinks();
     }
   },[])
