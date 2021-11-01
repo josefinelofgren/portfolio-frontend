@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'Work Sans', sans-serif, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Nunito', 'Work Sans', sans-serif, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -21,27 +21,26 @@ code {
 
 .container-fluid {
   height: 100%;
-  padding: 40px;
+  padding: 8%;
 }
-
 
 .body-container {
   padding: 0 !important;
 }
 
 .title {
-  font-size: 30px;
+  font-size: 20px;
   text-transform: uppercase;
   margin-bottom: 30px;
-  font-weight: 400;
-  font-family: 'Source Code Pro', monospace;
-  width: 250px;
+  font-weight: 800;
+  color: rgb(85, 85, 85);
+  width: max-content;
 }
 
 .title-number {
   color: rgb(204, 204, 204);
-  font-family: 'Work Sans';
   margin-bottom: 20px;
+  font-weight: 600;
 }
 
 .color {
@@ -55,40 +54,44 @@ a {
 }
 
 p {
-  font-size: 15px;
+  font-size: 16px;
 }
 
 
 li {
   list-style: none;
-  margin: 0 20px;
+  margin: 0 10px;
   text-transform: uppercase;
   font-size: 12px;
 }
 
 a:hover {
-  color: rgb(184, 122, 93);
+  color: grey;
 }
 
 /* buttons */ 
 
 .btn {
-  border-radius: 20px;
-  padding: 5px;
-  padding-left: 40px;
+  padding: 10px 30px;
   min-width: max-content;
   max-width: 300px;
   text-align: right;
   margin: 0 auto;
   text-transform: uppercase;
   font-size: 14px;
-  background-color: rgb(185, 109, 73) !important;
-  border-color: rgb(185, 109, 73)!important;
+  font-weight: 400 !important;
+  color: rgb(54, 54, 54);
+  background-color: transparent;
+  border-color: rgb(184, 184, 184);
+  transition: ease-in 0.2s;
+  letter-spacing: 0.1em;
+  border-radius: 0 !important;
 }
 
 .btn:hover { 
-  background-color: rgb(184, 122, 93) !important;
-  border-color: rgb(184, 122, 93)!important;
+  background-color: #303030 !important;
+  border-color: #303030 !important;
+  color: #fff;
 }
 
 .btn-dark:hover {
@@ -105,22 +108,16 @@ a:hover {
   padding-left: 20px;
 }
 
-.btn-left {
-  text-align: left;
-  padding-left: 5px;
-  padding-right: 30px;
-}
 
 .btn-about {
   background-color: #fafafa !important;
   border-color: #fafafa !important;
-  color: #000;
 }
 
-.btn-about:hover { 
-  background-color: #f1f1f1  !important;
-  border-color: #f1f1f1 !important;
+.btn-about.cv {
+  padding-left:30px;
 }
+
 
 .btn-project-readmore {
   background-color: #2b2b2b !important;
@@ -135,7 +132,9 @@ a:hover {
 }
 
 
-
+.project-btn {
+  margin-bottom:80px;
+}
 
 /* images */ 
 
@@ -143,11 +142,9 @@ img {
   position: relative;
   width: 100%;
   height: auto;
+  margin: 0 !important;
 }
 
-figure {
-  filter: grayscale(30%);
-}
 
 .img-color {
   filter: grayscale(0%) !important;
@@ -160,15 +157,15 @@ figure {
 /* Header */ 
 
 .header {
-  background-color: rgb(185, 109, 73);
+  background-color: rgb(255, 255, 255);
   height: auto;
   width: 100vw;
-  color: rgb(255, 255, 255);
+  color: rgb(65, 65, 65);
 }
 
 .header-content {
-  width: 90%;
-  padding: 100px 0;
+  max-width: 800px;
+  padding: 50px 0;
   margin: 0 auto;
   text-align: center;
 }
@@ -177,18 +174,12 @@ figure {
   text-transform: capitalize;
 }
 
-.biggertext {
-  font-family: 'Source Code Pro', monospace;
-  color: #fff;
-  font-weight: 400;
+.header-title {
+  font-weight: 800;
+  font-size: 50px;
 }
 
 /* Prewords */
-
-.prewords-image {
-  height: auto;
-  position: relative;
-}
 
 .prewords-image:hover {
   filter: grayscale(0%);
@@ -196,16 +187,27 @@ figure {
 
 .prewords {
   background-color: #f5f5f5;
+  margin-top: -80px;
+  padding: 50px 0;
 }
+.prewords a {
+  width: max-content;
+  margin: 0 auto;
+}
+
 
 /* About */ 
 
 .about {
-  background-color: rgb(185, 109, 73);
+  background-color: #fafafa;
   width: 100vw;
   height: auto;
-  color: #fff;
+  color: #333;
   padding-bottom: 40px;
+}
+
+.about-col.right{
+  padding-left: 100px;
 }
 
 
@@ -219,20 +221,21 @@ figure {
 /* progress bars */ 
 
 .progress-container {
+  width: 100%;
   margin: 0 auto;
-  margin-top: 40px;
   margin-bottom: 40px;
 }
 
 .progress-content {
-  margin: 10px 0;
+  margin-bottom: 10px;
 }
 
 .progress {
   width: 100%;
   height: 20px;
-  background-color: #ffffff;
+  background-color: rgb(231, 231, 231);
   border-radius: 10px;
+  margin: 0 auto;
 }
 
 .progress-done {
@@ -241,7 +244,7 @@ figure {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(235, 174, 144);
+  background-color:#5c5c5c;
   border-radius: 10px;
   position: relative;
   opacity: 0;
@@ -253,6 +256,7 @@ figure {
   position: absolute;
   top: 0px;
   right: 10px;
+  font-weight: 800;
   color: #fff !important;
 }
 
@@ -270,21 +274,18 @@ figure {
 .project {
   height: auto;
   position: relative;
-  margin: 20px 0px 100px 0px;
 }
 
-.project-intro-text {
-  min-width: 300px;
-  width: 50%;
-  margin-bottom: 40px;
+.project p {
+  margin-bottom: 30px;
 }
-
 
 
 /* transition for hover effect */ 
 .work {
   transition: transform .25s ease;
   position: relative;
+  padding: 0 !important;
 }
 
 /* hover effects */ 
@@ -293,80 +294,47 @@ figure {
   filter: grayscale(0%);
 }
 
+.project figure {
+  padding:20px;
+}
+
+
+
 
 figure.work img, 
 figure.work video {
   display: block;
   width: 100%;
   height: auto;
-  padding: 0;
-  min-width: 200px;
+  margin: 0 auto;
 }
-
-
-.project-title-box {
-  display: inline-block;
-  height: auto;
-  box-sizing: content-box !important;
-  margin-top: 10px;
-  border-radius: 5px;
-}
-
 
 .project-headtitle a {
   color: rgb(46, 46, 46) !important;
 }
 
-.project-content{
-  display: grid;
-  grid-template-columns: 75% 25%;
-}
-
-
-.project-info {
-  background-color: #f5f5f5;
-  position: absolute;
-  z-index: 10;
-  top: 30%;
-  padding: 5% 5%;
-  width: 60% !important;
-  min-width: 200px;
-  max-width: 450px;
-}
-
-.project-info.right {
-  right: 0;
-}
-
-.project-info.left {
-  left: 0;
-}
-
-
 .project-title {
-  font-size:calc(12px + 1.2vw);
-  color: rgb(185, 109, 73);
-  font-weight: 400;
-  text-transform: uppercase;
-  font-family: 'Source Code Pro', monospace;
+  font-size:calc(20px + 1.0vw);
+  font-weight: 800;
+  color: rgb(65, 65, 65);
+  margin-top: 20px;
 }
 
 .project-title:first-letter {
   text-transform: uppercase;
 }
 
-.project-title-arrow {
-  position: relative;
-  font-size: 25px;
-}
 
-.project-undertitle {
-  color:rgb(61, 61, 61);
-  font-weight: 300;
-  font-size:calc(12px + 0.3vw);
-  margin: 0;
-  letter-spacing: 0em;
-  margin-bottom: 15px;
+.project-tool {
+  background-color: #f1f1f1;
+  color: rgb(105, 105, 105);
+  margin: 10px 10px 0 0;
+  padding: 8px 12px;
+  border: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  cursor: default !important;
 }
 
 
@@ -374,52 +342,77 @@ figure.work video {
 /* contact */ 
 
 .contact {
-  background-color: #f5f5f5;
+  background-color: #242424;
   height: auto;
-  margin-top: -50px;
+  padding: 50px 0;
 }
 
-.contact-title {
+.contact h1 {
+  font-size: 50px;
+  padding-bottom: 5px;
+  width: max-content;
   margin: 0 auto;
-  margin-bottom: 30px;
-  text-transform: none;
-  width: 100%;
+  cursor: pointer;
 }
+
 
 .contact-content {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
   text-align: center;
-  color: rgb(70, 70, 70);
-  padding-top: 20px;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .contact-text {
-  font-size: 16px;
+  font-size: 25px;
   font-weight: 400;
+  line-height: 1.4em;
 }
 
 
+
 .contact-mail-adress {
-  padding-bottom: 1px;
-  border-bottom: 1px solid;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  padding-bottom:2px;
+}
+
+.contact-mail-adress {
+  text-decoration: none;
+  background-image: linear-gradient(#ffffffe6, #ffffffe6);
+  background-size: 0% 0.1em;
+  background-position-y: 100%;
+  background-position-x: 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease-in-out;
+  border-radius: 2px;
+  }
+  .contact-mail-adress:hover,
+  .contact-mail-adress:focus,
+  .contact-mail-adress:active {
+  background-size: 100% 0.1em;
+  background-position-x: 0%;
+  }
+
+.contact-mail-adress:hover {
+  color: rgba(255, 255, 255, 1);
 }
 
 /* copyright */ 
 
 .copyright {
-  background-color: rgb(255, 255, 255);
-  margin-top: 0;
-  height: 60px;
   width: 100%;
   text-align: center;
+  background-color:#fff;
+  padding-top: 20px;
 }
 
 .contact-copyright {
-  color: rgba(75, 75, 75, 0.5);
-  padding-top: 20px;
+  color: rgba(2, 2, 2, 0.404) !important;
+  font-size: 12px !important;
 }
+
 
 
 
@@ -433,13 +426,44 @@ figure.work video {
   top: -1px;
 }
 
+.sm-circle {
+  display: inline-block;
+  margin: 10px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  position: relative;
+  border: 1px solid rgb(184, 184, 184);
+}
+
+.sm-circle:hover {
+  background-color: #303030;
+  border-color: #303030;
+}
+
+
 .sm-icon,
 .sm-icon a {
   display: inline-block;
-  margin: 8px;
-  font-size: 20px;
-  color: rgb(100, 100, 100);
+  font-size: 10px;
+  position: relative;
+  color: rgba(2, 2, 2, 0.404) !important;
+  margin: 0 2px;
+  font-weight: 600;
 }
+
+.sm-icon:hover,
+.sm-icon a:hover {
+  color: rgba(2, 2, 2, 0.5) !important;
+}
+
+.sm-circle:hover .sm-icon,
+.sm-circle:hover .sm-icon a {
+  color: #fff !important;
+}
+
+
 
 
 
@@ -468,23 +492,22 @@ figure.work video {
 }
 
 .project-readmore-title {
-  font-size: calc(30px + 1.4vw);
+  font-size: 40px;
   text-transform: uppercase;
-  font-weight: 400;
-  font-family: 'Source Code Pro', monospace;
+  font-weight: 700;
   color: #fff;
+  margin-bottom: 20px;
 }
 
 .project-readmore-undertitle {
-  font-size: calc(12px + 0.8vw);
+  font-size: 14px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.8);
 }
 
 .project-readmore-subtitle {
-  font-size: calc(14px + 1.2vw);
+  font-size: 18px;
   text-transform: uppercase;
-  font-weight: 400;
 }
 
 .project-readmore-text {

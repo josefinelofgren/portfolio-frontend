@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { IoIosArrowForward } from 'react-icons/io';
 import { ProjectData } from '../../data/ProjectData';
-import { FaPercent } from 'react-icons/fa';
 
 
 function Projects() {
@@ -18,8 +17,8 @@ function Projects() {
       <Row>
         <Col md='12' className='projects-col left'>
           <Container fluid>
-            <h5 className='title-number' data-aos='fade-up' data-aos-once='true'>01 / </h5>
-            <h2 className='title about-title' data-aos='fade-up' data-aos-once='true'>Selected projects</h2>
+            {/* <h5 className='title-number' data-aos='fade-up' data-aos-once='true'>01 / </h5>
+            <h2 className='title about-title' data-aos='fade-up' data-aos-once='true'>Selected projects</h2> */}
             <p data-aos='fade-up' data-aos-once='true' className='project-intro-text'>I've collected some of my most recents and well executed projects for you to have a closer look at. Hope you find them interesting. </p>
           {ProjectData.map((item, index) => {
             return (
@@ -45,7 +44,7 @@ function Projects() {
 
 
 
-export function Project({textSide, path, devicePercent, linkSrc, imgSrc, title, undertitle, description}){
+export function Project({textSide, path, linkSrc, imgSrc, title, undertitle, description}){
 
   const [hovered, setHovered] = useState(false);
   const toggleHover = () => setHovered(!hovered);
@@ -57,16 +56,15 @@ export function Project({textSide, path, devicePercent, linkSrc, imgSrc, title, 
                   <div className='project-figure'>
                   <figure 
                       className={hovered ? ` work hover` : ` work`}
-                      style={{ left: `${devicePercent}`}}
                       >
-                        <img src={imgSrc} className='project-img' /> 
+                        <img src={imgSrc} className='project-img' alt="Project" /> 
                   </figure>
                   </div>
               <div className={`project-info ${textSide}`}>
                       <h3 className="project-title">{title}</h3>
                   <h5 className="project-undertitle">{undertitle}</h5>
-                  <p className="project-undertitle">{description}</p>
-                  <Link className='project-headtitle' to={`/josefinelofgren.com/project/${path}`}>
+                  <p className="project-description">{description}</p>
+                  <Link className='project-headtitle' to={`/project/${path}`}>
                     <Button className={hovered ? 'fw-bold btn-project hover' : 'fw-bold btn-project' } 
                     onMouseEnter={toggleHover} 
                     onMouseLeave={toggleHover}>Read more <IoIosArrowForward className='btn-icon'/></Button>

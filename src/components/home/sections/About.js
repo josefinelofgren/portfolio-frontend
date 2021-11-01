@@ -25,7 +25,7 @@ function About() {
                   <Progress skill='Having fun' done='100'/> 
               </div>
               <div fluid data-aos='fade-up' data-aos-once='true'>
-                <Button variant='light' className='fw-bold'> 
+                <Button variant='dark' className='fw-bold'> 
                   Get to know me better 
                   <IoIosArrowForward className='btn-icon'/>
                 </Button>
@@ -34,7 +34,7 @@ function About() {
             </Col>
             <Col md='6' className='about-col right'>
               <figure className='about-image'>
-                <img className='border-radius' src={require('../../../images/josefinelofgren.jpg').default}></img>
+                <img className='border-radius' src={require('../../../images/josefinelofgren.jpg').default} alt='Josefine Löfgren Portrait'></img>
               </figure>
             </Col>
           </Row>
@@ -53,7 +53,7 @@ const Progress = ({ skill, done }) => {
     }
     
     setStyle(newStyle)
-  }, 2000);
+  }, 1000);
   
   return (
     <div className='progress-content'>

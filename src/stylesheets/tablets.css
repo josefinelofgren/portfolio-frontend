@@ -1,4 +1,4 @@
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 768px) {
 
     .nav-menu-wrap.open {
       width: 400px;
@@ -13,31 +13,11 @@
       padding-top: 60px;
     }
 
-    .container-fluid {
-      padding: 20px;
+    .about-col.right{
+      padding-left: 0;
     }
-
-    .project {
-      margin: 20px 0px 180px 0px;
-    }
-
-    .container-fluid.intro {
-      padding-bottom: 0;
-    }
-
-    .project-readmore-text {
-      margin-bottom: 20px;
-    }
-    
-    .project-readmore-text.intro {
-      margin-bottom: 0px;
-    }
-    
 
   }
 
-  @media screen and (max-width: 1000px) { 
-    .col-md-6 {
-      padding: 0px !important;
-    }
-  }
+
+

@@ -1,36 +1,36 @@
 .navbar {
   padding: 0 !important;
-  height: 80px !important;
+  height: 120px !important;
   background-color: #fff;
 }
 
 .sidebar-links {
   position: relative;
-  top: 20vh !important;
+  top: 30vh !important;
 }
 
 .sidebar-links .nav-text {
   margin: 20px;
-  font-size: 18px;
+  font-size: 24px;
 }
 
 .nav-text,
 .nav-text a,
 .nav-link,
 .nav-link a {
-  color: rgb(77, 77, 77);
+  color: rgb(231, 230, 230);
 }
 
 .nav-text:hover,
 .nav-text a:hover,
 .nav-link:hover,
 .nav-link a:hover {
-  color: grey;
+  color: rgb(255, 255, 255);
 }
 
 .nav-links {
   position: relative;
-  top: 20px;
+  top: 10px;
   display: none;
 }
 
@@ -47,8 +47,14 @@
 
 .navbar-brand {
   position: relative;
-  font-family: 'Sniglet', cursive;
   text-transform: uppercase;
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+}
+
+.navbar-brand a {
+  color: rgb(75, 75, 75) !important;
 }
 
 .navbar-menu {
@@ -65,9 +71,10 @@
 .nav-menu-wrap {
   position: fixed;
   z-index: 9;
-  background-color: rgb(255, 255, 255);
-  -webkit-transition: width 0.3s, height 0.3s;
-  transition: width 0.3s, height 0.3s;
+  background-color: rgba(36, 36, 36, 0.95);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
   width: 0;
   height: 100vh;
   font-size: 1.5em;
@@ -78,8 +85,9 @@
 }
 
 .nav-menu-wrap.open {
-  width: 300px;
+  width: 100vw;
   height: 100vh;
+  opacity: 1;
   -moz-border-bottom-left-radius:0;
   border-bottom-left-radius: 0;
   -webkit-animation: anim-jelly 0.8s linear forwards;
@@ -125,6 +133,7 @@
   transition: width 0.5s ease 0s, left 0.5s ease 0s;
   width: 0;
 }
+
 .nav-text a:hover:after { 
   width: 100%; 
   left: 0; 
@@ -133,8 +142,7 @@
 .sidebar-btn {
     width: 40px;
     height: 50px;
-    right: 40px;
-    position: fixed;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -180,8 +188,10 @@
   
   .sidebar-btn.is-active .sidebar-burger::before {
     transform: rotate(-135deg);
+    background: #fff;
   }
   
   .sidebar-btn.is-active .sidebar-burger::after {
     transform: rotate(135deg);
+    background: #fff;
   }

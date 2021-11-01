@@ -11,6 +11,8 @@ import Aos from 'aos';
 import { Container } from 'react-bootstrap';
 import Navigation from './components/navigation/Navigation';
 import Home from './components/home/Home';
+import PreWords from './components/home/sections/PreWords';
+import Contact from './components/home/sections/Contact';
 import Josefine from './components/josefine/Josefine';
 import ProjectReadMore from './components/project/ProjectReadMore';
 
@@ -28,7 +30,7 @@ function App() {
   
   // hide menu links 
   const hideMenuLinks = () => {
-    if(window.location.pathname !== '/josefinelofgren.com/'){
+    if(window.location.pathname !== '/'){
         setMenuLinks(false);
         setBackLink(true);
     } else {
@@ -39,7 +41,7 @@ function App() {
 
     // show menu links
     const showMenuLinks = () => {
-      if(window.location.pathname === '/josefinelofgren.com/'){
+      if(window.location.pathname === '/'){
           setMenuLinks(true);
           setBackLink(false);
       } else {
@@ -63,7 +65,7 @@ function App() {
     <Router>
         <Container fluid className='body-container'>
           <Route 
-            path='/josefinelofgren.com/:path1?/:path2?'>
+            path='/:path1?/:path2?'>
             <Navigation 
             showMenuLinks={showMenuLinks}
             hideMenuLinks={hideMenuLinks}
@@ -75,19 +77,20 @@ function App() {
           </Route>
             <Switch>
                 <Route 
-                    exact path='/josefinelofgren.com/'>
+                    exact path='/'>
                     <Home 
                      showMenuLinks={showMenuLinks}
                      hideMenuLinks={hideMenuLinks}
                      />  
                 </Route>
                 <Route 
-                    path='/josefinelofgren.com/josefine'>
+                    path='/josefine'>
                     <Josefine 
                        hideMenuLinks={hideMenuLinks}/>  
+                    <Contact /> 
                 </Route>
                 <Route 
-                    path='/josefinelofgren.com/project/:projectName'>
+                    path='/project/:projectName'>
                     <ProjectReadMore 
                       hideMenuLinks={hideMenuLinks}/>  
                 </Route>

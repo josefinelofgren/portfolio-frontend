@@ -1,10 +1,9 @@
 // import libaries 
 import React, { useLayoutEffect, useEffect } from 'react';
-import { Link, useParams, useHistory } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 //import components
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import Header from '../home/sections/Header';
 import { ProjectData } from '../data/ProjectData';
 import { IoIosArrowBack } from 'react-icons/io';
 
@@ -21,15 +20,15 @@ function ProjectReadMore({hideMenuLinks}) {
 
   // button on click 
   const onClick = () => {
-    history.push('/josefinelofgren.com/');
+    history.push('/');
     hideMenuLinks();
   }
 
   useEffect(() => {
-    if(window.location.pathname !== '/josefinelofgren.com/'){
+    if(window.location.pathname !== '/'){
       hideMenuLinks();
     }
-  },[])
+  },[hideMenuLinks])
 
   let params = useParams();
   let title = params.projectName;
@@ -54,7 +53,7 @@ function ProjectReadMore({hideMenuLinks}) {
                 </Col>
                 <Col md='8' className='project-readmore-col'>
                   <figure className='project-readmore-figure'>
-                    <img src={item.imgSrc} className='project-readmore-img' /> 
+                    <img src={item.imgSrc} className='project-readmore-img' alt="Project"/> 
                   </figure>
                 </Col>
               </Row>
@@ -87,7 +86,7 @@ function ProjectReadMore({hideMenuLinks}) {
                       <h5 className='project-readmore-subtitle' style={{color: `${item.color}` }}>
                         Tools:
                       </h5>
-                      <p className='project-readmore-text'>{item.tools}</p>
+                      <p className='project-readmore-text'>{item.devTools}</p>
                     </div>
                   </Container>
                 </Col>
@@ -96,7 +95,7 @@ function ProjectReadMore({hideMenuLinks}) {
                 <Col md='12' className='project-readmore-mockup'>
                   <Container fluid>
                     <figure data-aos='fade-up' data-aos-once='true' >
-                      <img src={item.imgMock}/> 
+                      <img src={item.mockup} alt="Project mockup"/> 
                     </figure>
                   </Container>
                 </Col>
@@ -111,25 +110,25 @@ function ProjectReadMore({hideMenuLinks}) {
             </div>
             </>
             )
-        }
+        } return null;
     })}
     </>
   );
 }
 
 
-function ProjectImage({ imgSrc, device }){
-  return (
-              <div className="project-readmore-image">
-                  <div className='project-content' data-aos="fade-up" data-aos-once="true" data-aos-offset='300'>
-                      <figure 
-                          className={`project-${device} work img-color`}
-                          >
-                          {imgSrc}
-                      </figure>
-                  </div>
-              </div>
-  )
-}
+// function ProjectImage({ imgSrc, device }){
+//   return (
+//               <div className="project-readmore-image">
+//                   <div className='project-content' data-aos="fade-up" data-aos-once="true" data-aos-offset='300'>
+//                       <figure 
+//                           className={`project-${device} work img-color`}
+//                           >
+//                           {imgSrc}
+//                       </figure>
+//                   </div>
+//               </div>
+//   )
+// }
 
 export default ProjectReadMore;
