@@ -7,7 +7,7 @@ export const SocialMedia = [
     {
         title: 'LinkedIn',
         path: '/linkedIn',
-        src: 'https://www.linkedin.com/in/josefine-l%C3%B6fgren-a63126170/',
+        src: 'https://www.linkedin.com/in/josefinelofgren/',
         cName: 'sm-icon',
         icon: <FaIcons.FaLinkedinIn />
     }, 

@@ -10,11 +10,13 @@ import Aos from 'aos';
 //import components
 import { Container } from 'react-bootstrap';
 import Navigation from './components/navigation/Navigation';
-import Home from './components/home/Home';
-import PreWords from './components/home/sections/PreWords';
-import Contact from './components/home/sections/Contact';
-import Josefine from './components/josefine/Josefine';
+import Home from './pages/home/Home';
+import Contact from './components/home/Contact';
+import About from './components/about/about';
 import ProjectReadMore from './components/project/ProjectReadMore';
+import Amazon from './components/project/pages/Amazon';
+import Calendar from './components/project/pages/Calendar';
+
 
 function App() {
 
@@ -56,7 +58,7 @@ function App() {
     Aos.init({ 
       duration: 600,
       easing: 'ease-out',
-      anchorPlacement: 'top-top'
+      anchorPlacement: 'top-bottom'
     });
 }, []);
 
@@ -85,14 +87,23 @@ function App() {
                 </Route>
                 <Route 
                     path='/josefine'>
-                    <Josefine 
+                    <About 
                        hideMenuLinks={hideMenuLinks}/>  
                     <Contact /> 
                 </Route>
                 <Route 
-                    path='/project/:projectName'>
-                    <ProjectReadMore 
-                      hideMenuLinks={hideMenuLinks}/>  
+                    path='/project/amazon-website-redesign'>
+                    <Amazon 
+                      hideMenuLinks={hideMenuLinks}
+                      
+                      />  
+                </Route>
+                <Route 
+                    path='/project/calendar-with-todo'>
+                    <Calendar 
+                      hideMenuLinks={hideMenuLinks}
+                      
+                      />  
                 </Route>
             </Switch>
         </Container>

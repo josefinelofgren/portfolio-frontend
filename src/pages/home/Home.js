@@ -2,10 +2,10 @@
 import React, { useLayoutEffect, useEffect } from 'react';
 
 //import components
-import Header from './sections/Header';
-import PreWords from './sections/PreWords';
-import Projects from './sections/Projects2';
-import Contact from './sections/Contact';
+import Header from '../../components/home/Header';
+import PreWords from '../../components/home/PreWords';
+import Projects from '../../components/home/Projects';
+import Contact from '../../components/home/Contact';
 
 function Home({showMenuLinks, hideMenuLinks, setSidebar}) {
 
@@ -21,14 +21,7 @@ function Home({showMenuLinks, hideMenuLinks, setSidebar}) {
 
   return (
     <>
-        <Header 
-          text="Hi I'm Josefine"
-          undertext=", a front-end developer with a passion for UX."/> 
-        {/* <PreWords 
-        showMenuLinks={showMenuLinks}
-        hideMenuLinks={hideMenuLinks}
-        />  */}
-        {/* <About />  */}
+        <Header />
         <Projects /> 
         <PreWords />
         <Contact /> 

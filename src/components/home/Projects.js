@@ -7,20 +7,14 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import { ProjectData } from '../../data/ProjectData';
 
 
-function Projects2() {
+function Projects() {
 
 
   return (
     <div id='projects' className='projects'>
     <Container fluid>
-      <Row >
-        <Col md='12' className='projects-col left'>
-            <h5 className='title-number' data-aos='fade-up' data-aos-once='true'>00 / </h5>
-            <h2 className='title' data-aos='fade-up' data-aos-once='true'>Featured projects</h2>
-        </Col>
-      </Row>
     <Row>
-                {ProjectData.map((item, index) => {
+        {ProjectData.map((item, index) => {
             return (
                 <Col md='6' className={`project-${index}`}>
                 <Project 
@@ -30,6 +24,7 @@ function Projects2() {
                   imgSrc={item.imgSrc}
                   button={item.button}
                   path={item.path}
+                  color={item.color}
                 /> 
                 </Col>
             )
@@ -42,19 +37,21 @@ function Projects2() {
 
 
 
-export function Project({imgSrc, title, tools, description, button, path}){
+export function Project({imgSrc, title, tools, description, button, path, color}){
 
   const [hovered, setHovered] = useState(false);
   const toggleHover = () => setHovered(!hovered);
 
   return (
-          <div className="project">
+          <div className="project" data-aos='fade-up' data-aos-once='true'>
               <div className='project-content'>
                   <div className='project-figure'>
                   <figure 
                       className={hovered ? ` work hover` : ` work`}
                       >
-                        <img src={imgSrc} className='project-img' alt="Project" /> 
+                        <div className='project-figure-img' style={{backgroundColor: `${color}` }}>
+                          <img src={imgSrc} className='project-img' alt="Project" /> 
+                        </div>
                         {tools.map((value, index) => {
                        return <button className='project-tool' key={index}>{value}</button>
                         })}
@@ -72,4 +69,4 @@ export function Project({imgSrc, title, tools, description, button, path}){
   );
 }
 
-export default Projects2;
+export default Projects;

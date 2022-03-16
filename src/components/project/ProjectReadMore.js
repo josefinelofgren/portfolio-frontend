@@ -4,7 +4,7 @@ import { useParams, useHistory } from 'react-router-dom';
 
 //import components
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import { ProjectData } from '../data/ProjectData';
+import { ProjectData } from '../../data/ProjectData';
 import { IoIosArrowBack } from 'react-icons/io';
 
 
@@ -44,69 +44,118 @@ function ProjectReadMore({hideMenuLinks}) {
             return (
               <>
             <div id='project-readmore' className='project-readmore'>
-              <Row>
-                <Col md='4'className='project-readmore-header project-readmore-col' style={{backgroundColor: `${item.color}`}}>
+              <Row className='project-readmore-header' style={{backgroundColor: `${item.color}`}}>
+                <Col md='6'className='project-readmore-col'>
                   <div className='project-readmore-header-content'>
-                    <h2 className='project-readmore-title'>{item.title}</h2>
+                    <div className='readmore-container'>
+                    <h1 className='project-readmore-title'><span style={{backgroundColor: `${item.darkerColor}`, boxShadow: ` -10px 0px 0 7px ${item.darkerColor}, 10px 0px 0 7px ${item.darkerColor}, 0 0 0 7px ${item.darkerColor}`}}>{item.title}</span></h1>
+                    </div>
                     <h4 className='project-readmore-undertitle'>{item.description}</h4>
                   </div>
                 </Col>
-                <Col md='8' className='project-readmore-col'>
+                <Col md='6' className='project-readmore-col'>
                   <figure className='project-readmore-figure'>
                     <img src={item.imgSrc} className='project-readmore-img' alt="Project"/> 
                   </figure>
                 </Col>
               </Row>
+              <Container fluid>
               <Row>
-                <Col md='7'>
-                  <Container fluid className='intro'>
-                    <div data-aos='fade-up' data-aos-once='true'>
-                      <h5 className='project-readmore-subtitle' style={{color: `${item.color}` }}>
-                        Intro:
-                      </h5>
+                <Col md='8'>
+                    <div data-aos='fade-up' data-aos-once='true' className='project-readmore-intro'>
+                      <h2 className='project-readmore-subtitle' style={{color: `${item.darkerColor}` }}>
+                        Overview
+                      </h2>
                       <p className='project-readmore-text intro'>{item.intro}</p>
                     </div>
-                  </Container>
                 </Col>
-                <Col md='5'>
-                  <Container fluid>
-                    <div data-aos='fade-up' data-aos-once='true'>
-                      <h5 className='project-readmore-subtitle' style={{color: `${item.color}` }}>
-                        Roles:
-                      </h5>
-                      <p className='project-readmore-text'>{item.roles}</p>
+                <Col md='1'>
+                </Col>
+                <Col md='3'>
+                    <div data-aos='fade-up' data-aos-once='true' className='project-readmore-details'>
+                      <h3 className='project-readmore-subtitle' style={{color: `${item.darkerColor}` }}>
+                        Roles
+                      </h3>
+                      {item.roles.map((value, index) => {
+                       return <p className='project-readmore-text' key={index}>{value}</p>
+                        })}
                     </div>
-                    <div data-aos='fade-up' data-aos-once='true'>
-                      <h5 className='project-readmore-subtitle' style={{color: `${item.color}` }}>
-                        Platform:
-                      </h5>
-                      <p className='project-readmore-text'>{item.platform}</p>
+                    <div data-aos='fade-up' data-aos-once='true' className='project-readmore-details'>
+                      <h3 className='project-readmore-subtitle' style={{color: `${item.darkerColor}` }}>
+                        Platform
+                      </h3>
+                      {item.platforms.map((value, index) => {
+                       return <p className='project-readmore-text' key={index}>{value}</p>
+                        })}
                     </div>
-                    <div data-aos='fade-up' data-aos-once='true'>
-                      <h5 className='project-readmore-subtitle' style={{color: `${item.color}` }}>
-                        Tools:
-                      </h5>
-                      <p className='project-readmore-text'>{item.devTools}</p>
+                    <div data-aos='fade-up' data-aos-once='true' className='project-readmore-details'>
+                      <h3 className='project-readmore-subtitle' style={{color: `${item.darkerColor}` }}>
+                        Tools
+                      </h3>
+                      {item.allTools.map((value, index) => {
+                       return <p className='project-readmore-text' key={index}>{value}</p>
+                        })}
                     </div>
-                  </Container>
                 </Col>
               </Row>
-              <Row>
-                <Col md='12' className='project-readmore-mockup'>
-                  <Container fluid>
-                    <figure data-aos='fade-up' data-aos-once='true' >
-                      <img src={item.mockup} alt="Project mockup"/> 
+              {item.title2 && (
+                <Row className='margin-bottom'>
+                  <div data-aos='fade-up' data-aos-once='true' className='project-readmore-intro'>
+                      <h2 className='project-readmore-subtitle' style={{color: `${item.darkerColor}` }}>
+                        {item.title2}
+                      </h2>
+                      <p className='project-readmore-text intro'>{item.info2}</p>
+                <figure className='project-readmore-persona'>
+                      <img src={`${item.imgSrc2}`} alt={item.imgInfo}/> 
                     </figure>
-                  </Container>
-                </Col>
-              </Row>
+                    </div>
+                </Row>
+              )}
+              {item.title3 && (
+                <Row className='margin-bottom'>
+                  <div data-aos='fade-up' data-aos-once='true' className='project-readmore-intro'>
+                      <h2 className='project-readmore-subtitle' style={{color: `${item.darkerColor}` }}>
+                        {item.title3}
+                      </h2>
+                      <p className='project-readmore-text intro'>{item.info3}</p>
+                  <figure className='project-readmore-persona'>
+                      <img src={`${item.imgSrc3}`} alt={item.imgInfo2}/> 
+                    </figure>
+                    </div>
+                </Row>
+              )}
+              {item.info4 && (
+                <Row className='margin-bottom'>
+                  <div data-aos='fade-up' data-aos-once='true' className='project-readmore-intro'>
+                      <h2 className='project-readmore-subtitle' style={{color: `${item.darkerColor}` }}>
+                        {item.title4}
+                      </h2>
+                      <p className='project-readmore-text intro'>{item.info4}</p>
+                  <figure className='project-readmore-persona'>
+                      <img src={`${item.imgSrc4}`} alt={item.imgInfo2}/> 
+                    </figure>
+                    </div>
+                </Row>
+              )}
+               {item.info5 && (
+                <Row className='margin-bottom'>
+                  <div data-aos='fade-up' data-aos-once='true' className='project-readmore-intro'>
+                      <h2 className='project-readmore-subtitle' style={{color: `${item.darkerColor}` }}>
+                        {item.title5}
+                      </h2>
+                      <p className='project-readmore-text intro'>{item.info5}</p>
+                  <figure className='project-readmore-persona'>
+                      <img src={`${item.imgSrc5}`} alt={item.imgInfo2}/> 
+                    </figure>
+                    </div>
+                </Row>
+              )}
               <Row>
                 <Col md='12'>
-                  <Container fluid>
-                    <Button onClick={onClick} className='fw-bold btn-left btn-project-readmore'> <IoIosArrowBack className='btn-icon'/> Back to homepage</Button>
-                  </Container>
+                    <Button onClick={onClick} className='fw-bold btn-left btn-light'> <IoIosArrowBack className='btn-icon'/> Back to homepage</Button>
                 </Col>
               </Row>
+              </Container>
             </div>
             </>
             )
@@ -116,19 +165,5 @@ function ProjectReadMore({hideMenuLinks}) {
   );
 }
 
-
-// function ProjectImage({ imgSrc, device }){
-//   return (
-//               <div className="project-readmore-image">
-//                   <div className='project-content' data-aos="fade-up" data-aos-once="true" data-aos-offset='300'>
-//                       <figure 
-//                           className={`project-${device} work img-color`}
-//                           >
-//                           {imgSrc}
-//                       </figure>
-//                   </div>
-//               </div>
-//   )
-// }
 
 export default ProjectReadMore;
