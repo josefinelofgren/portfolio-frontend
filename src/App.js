@@ -16,6 +16,7 @@ import About from './components/about/about';
 import ProjectReadMore from './components/project/ProjectReadMore';
 import Amazon from './components/project/pages/Amazon';
 import Calendar from './components/project/pages/Calendar';
+import PixelArt from './components/project/pages/PixelArt';
 
 
 function App() {
@@ -94,6 +95,13 @@ function App() {
                 <Route 
                     path='/project/amazon-website-redesign'>
                     <Amazon 
+                      hideMenuLinks={hideMenuLinks}
+                      
+                      />  
+                </Route>
+                <Route 
+                    path='/project/pixel-art'>
+                    <PixelArt 
                       hideMenuLinks={hideMenuLinks}
                       
                       />  

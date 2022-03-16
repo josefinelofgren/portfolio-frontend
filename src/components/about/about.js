@@ -31,12 +31,12 @@ function About({hideMenuLinks}) {
     {
       title: 'UX Design',
       school: 'The Interaction Design Foundation, ',
-      date: '2021 - 2022',
+      date: '2021 - Now',
     },
     {
       title: 'Front End Developer',
       school: 'Medieinstitutet, ',
-      date: '2020 - 2022',
+      date: '2020 - Now',
     },
     {
       title: 'Courses in Sociology, Psychology and Organization',
@@ -52,7 +52,7 @@ function About({hideMenuLinks}) {
 
   const experience = [
     {
-      title: 'Front End Developer / QA Intern',
+      title: 'Full Stack Developer',
       company: 'Yepstr, ',
       date: 'Jan 2022 - Mar 2022'
     },
@@ -81,9 +81,9 @@ function About({hideMenuLinks}) {
             <Col md='6' className='about-col left'>
             <p className='bigger' data-aos='fade-up' data-aos-once='true'>
             Hi there 👋 <br/> 
-            Nice to meet you. I’m <span className='fw-bold'>Josefine Löfgren</span>, a UX/UI designer based in Stockholm, Sweden. </p>
+            Nice to meet you. I’m <span className='fw-bold'>Josefine Löfgren</span>, a Front End developer based in Stockholm, Sweden. </p>
               <p className='smaller' data-aos='fade-up' data-aos-once='true'>
-              Skilled in User Experience with broad knowledge in Front End development as well. Experience in iOS and Android native apps, tablet and web design. I thrive in a world that is inspired by modern technology for positive change, making everyday life a little easier.   
+              Skilled in Front End development with a passion for UX as well. Experience in iOS and Android native apps, tablet and web design. I thrive in a world that is inspired by modern technology for positive change, making everyday life a little easier.   
               <br /> <br /> I'm a team player who enjoys working through each stage, collaborating with other experts in Agile environments, to ideate and iterate towards a final design. I would describe myself as curious problem solver and a creative thinker who always eager to learn more. 
               <br /> <br /> I always strive to create engaging and usable solutions. I love exploring how users communicate and interact with their surroundings, whether it's learning about their experiences, or observing their processes when interacting with a product or service.
               </p>
@@ -111,7 +111,7 @@ function About({hideMenuLinks}) {
             </div>
             <br /> 
             <div data-aos='fade-up' data-aos-once='true'>
-            <form method='get' action='Josefine-CV.png'>
+            <form method='get' action='josefine-cv.pdf'>
                   <Button variant='dark' type='submit' className='fw-bold'> 
                     Download CV
                   </Button>

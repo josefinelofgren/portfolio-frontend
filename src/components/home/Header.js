@@ -13,7 +13,7 @@ function Header() {
             <div className='header-content'>
               <p>Portfolio</p>
                 <h1 className='header-title'>
-                - Hi 👋 I'm Josefine, a UX/UI designer based in Stockholm.
+                - Hi 👋 I'm Josefine, a Front End developer with a passion for UX.
                 </h1>
             </div>
         </Container>
